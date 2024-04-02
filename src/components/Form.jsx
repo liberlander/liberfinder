@@ -1,6 +1,6 @@
 'use client'
 import styles from './Form.module.css'
-import useSearch from '@/hooks/useSearch'
+import fetchUser from '@/services/fetchUser'
 import { useContext } from 'react'
 import { responseContext } from '@/context/responseContext'
 
@@ -15,7 +15,7 @@ const Form = () => {
   }
 
   const searchUser = async (username) => {
-    const userExists = await useSearch(username);
+    const userExists = await fetchUser(username);
     setVisible(true)
     userExists ? setResponse(true) : setResponse(false)
   }

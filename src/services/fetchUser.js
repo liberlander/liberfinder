@@ -1,6 +1,6 @@
 // import data from '@/mocks/blocklist.json'
 
-const useSearch = async (username) => {
+const fetchUser = async (username) => {
   try { 
     const response = await fetch(process.env.JSON_URL)
     if(!response.ok) {
@@ -13,4 +13,4 @@ const useSearch = async (username) => {
   }
 }
 
-export default useSearch
+export default fetchUser
